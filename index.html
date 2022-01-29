@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/moon.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,12 +16,54 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1 hello there
-					<section>one</section>
-					<section>two</section>
-					<section>tree</section>
+				<section>
+					<h1>Typescript <span><img src="./images/Typescript_logo.svg" alt="ts-logo" width="60" height="60"></span></h1>
+					<p>
+						Prepared by 
+						<a href="https://github.com/VolhaBukhal" target="_blank">volhabukhal</a>
+					</p>
+					<p>for <a href="https://rs.school/js/" target="_blank">RS2021Q3</a></p>
+					<p>Belarus, 2022</p>
 				</section>
-				<section>Slide 2</section>
+				<section>
+					<h3>What does typescript is?</h3>
+					<p>TypeScript is <b>JavaScript with syntax for types</b></p>
+						<img src="./images/TS-JS-Compiler.png" alt="Typescript and JavaScript compiler">
+				</section>
+				<section>
+					<h3>The history of appearance</h3>
+					<section>
+						<p>Starts developing in 2012</p>
+						<img src="./images/microsoft.png" alt="microsoft-logo">
+					</section>
+					<section>
+						<p>by <i>Anders Hejlsberg</i> creater of C# language</p>
+						<p>
+							<img src="./images/Anders_Hejlsberg.jpg" alt="Anders Hejlsperg">
+						</p>
+					</section>
+					<section>
+						<ul >
+							<li class="fragment highlight-blue">From the beginning is devoloping as OpenSource</li>
+							<li class="fragment highlight-blue" >Start spreading out quickly due to flexibility and performance</li>
+							<li class="fragment highlight-blue">Popularity growth -> many projects migrate to TypeScript</li>
+							<li class="fragment highlight-blue"  ><img src="./images/Angular_logo.svg" alt="Angular logo" width="50" height="50" style="margin: 0;"> was written in typescript from the beginning</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h3>Why do we need TypeScript?</h3>
+					<div class="fragment">TypeScript allows to find the errors before you run the program </div>
+					<div class="fragment fade-in"> TypeScript implements the main concepts of object-oriented languages</div>
+					<div class="fragment fade-in"> TypeScript allows to create complicated programs quicker --> simpler, easier for refactoring the code</div>
+					<div class="fragment fade-in"> TypeScript is openSource and avalible on GitHub
+						<a href="https://github.com/Microsoft/TypeScript">https://github.com/Microsoft/TypeScript</a>
+					</div>
+				</section>
+				<section>
+					<h3>How to use, installation</h3>
+				</section>
+				
 			</div>
 		</div>
 
@@ -35,6 +77,10 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+
+				// transition: 'convex', 
+
+				transitionSpeed: 'slow',
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
