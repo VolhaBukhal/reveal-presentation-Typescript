@@ -1828,3 +1828,15 @@ $notesWidthPercent: 25%;
 
 //custom
 
+.interface__row {
+	display: flex;
+	justify-content: space-between;
+}
+.interface-item {
+	width: 50%;
+	margin: 0;
+}
+
+.compare-table {
+	width: 80%;
+}

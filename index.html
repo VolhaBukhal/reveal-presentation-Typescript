@@ -31,7 +31,7 @@
 					<p>TypeScript is <b>JavaScript with syntax for types</b></p>
 						<img src="./images/TS-JS-Compiler.png" alt="Typescript and JavaScript compiler">
 				</section>
-
+				<!-- The history of appearance -->
 				<section>
 					<h3>The history of appearance</h3>
 					<section>
@@ -53,7 +53,7 @@
 						</ul>
 					</section>
 				</section>
-
+				<!-- Why do we need TypeScript? -->
 				<section>
 					<h3>Why do we need TypeScript?</h3>
 					<div class="fragment">TypeScript allows to find the errors before you run the program </div>
@@ -63,7 +63,7 @@
 						<a href="https://github.com/Microsoft/TypeScript">https://github.com/Microsoft/TypeScript</a>
 					</div>
 				</section>
-
+				<!-- How to use? -->
 				<section>
 					<h3>How to use?</h3>
 					<p>Browsers don't understand Typescript</p>
@@ -75,7 +75,7 @@
 					<div class="fragment fade-in">create tsconfig.json file</div>
 					<div class="fragment fade-in">compile with command: <pre><code>tsc  or tsc--watch</code></pre></div>
 				</section>
-
+				<!-- Types in Typescript -->
 				<section>
 					<h3>Types in Typescript</h3>
 					<p>Typescript has all available in JS types plus <span style="color: #3cd0e8">enum</span> for </p>
@@ -94,6 +94,7 @@ let school: string = 'The Rolling Scopes School';
 						</code></pre>
 					</div>
 				</section>
+				<!-- Types in Typescript -->
 				<section>
 					<h3>Types in Typescript</h3>
 					<div class="fragment fade-left">Array
@@ -115,7 +116,7 @@ let school: string = 'The Rolling Scopes School';
 						</code></pre>
 					</div>
 				</section>
-
+				<!-- Types in Typescript -->
 				<section>
 					<h3>Types in Typescript</h3>
 						<div class="fragment fade-left">Numeric enums
@@ -139,7 +140,7 @@ let arrow: Direction = Direction.Up;
 								</code></pre>
 						</div>
 				</section>
-
+				<!-- Types in Typescript -->
 				<section>
 					<h3>Types in Typescript</h3>
 					<div class="fragment fade-left"> <span style="color: blue"> Any</span> 
@@ -152,7 +153,7 @@ let arrow: Direction = Direction.Up;
 						<p> <span style="color: green">&#x2713;</span> absence of having any type at all</p>
 					</div>
 				</section>
-
+				<!-- Functions in Typescript -->
 				<section>
 					<h3>Functions in Typescript</h3>
 					<div class="fragment fade-left">Function return void
@@ -173,13 +174,148 @@ message();</code></pre>
 let result = sum(10, 20); // 30</code></pre>
 						</div>
 				</section>
+				<!-- Objects and interfaces in Typescript -->
+				<section>
+					<h3>Objects and interfaces in Typescript</h3>
+					<section>
+						<pre><code> //Anonymous
 
+function greet(person: { name: string; age: number }) {
+return "Hello " + person.name;}</code></pre>
 
+					</section>
+					<section>
+						<pre><code>//Interface
 
+interface Person {
+name: string;
+age: number;
+}
+function greet(person: Person) {
+return "Hello " + person.name;
+}</code></pre>
 
+					</section>
+					<section>
+ 						<pre><code> //Interface with optional properties
+
+interface Person {
+	name: string;
+	age?: number;
+	gender?: string;
+} </code></pre>
+					</section>
+					<section>
+								<pre><code>//Extending Types
+interface BasicAddress {
+name?: string;
+street: string;
+city: string;
+country: string;
+postalCode: string;
+}
+interface AddressWithUnit extends BasicAddress {
+unit: string;
+}</code></pre>
+					</section>
+					<section>
+						<pre><code>//Type alias
+type Person = {
+name: string;
+age: number;
+};
+function greet(person: Person) {
+return "Hello " + person.name;}</code></pre>
+					</section>
+					<section>
+						<pre><code>//Type union
+let code: (string | number);
+code = 123;   // OK
+code = "ABC"; // OK
+code = false; // Compiler Error
+
+//Union of two types
+type Developer = {
+	devName: string
+}
+type Tester = {
+testerName: string
+}
+type Employee = Developer | Tester
+</code></pre>
+					</section>
+					<section>
+						<p>Types <span style="color: red">vs</span>  interfaces</p>
+						<table>
+							<tr>
+								<th>Property</th>
+								<th>Types</th>
+								<th>Interfaces</th>
+							</tr>
+							<tr>
+								<td>Unions</td>
+								<td><span style="color: red">&#x2715;</span></td>
+								<td><span style="color: green">&#x2713;</span></td>
+							</tr>
+							<tr>
+								<td>Tuple types</td>
+								<td><span style="color: green">&#x2713;</td>
+								<td><span style="color: red">&#x2715; unclear</td>
+							</tr>
+							<tr>
+								<td>Functions</td>
+								<td><span style="color: green">&#x2713; </span>
+								</td>
+								<td><span style="color: red">&#x2715; seems tricky</span>
+								</td>
+							</tr>
+							<tr>
+								<td>Declaration merging</td>
+								<td><span style="color: green">&#x2713;</span>
+								</td>
+								<td><span style="color: red">&#x2715;</span>
+								</td>
+							</tr>
+							<tr>
+								<td>Intersection</td>
+								<td><span style="color: green">&#x2713;</span>
+								</td>
+								<td><span style="color: red">&#x2715;</span>
+								</td>
+							</tr>
+							<tr>
+								<td>Inheritance</td>
+								<td><span style="color: red">&#x2715;</span></td>
+								<td><span style="color: green">&#x2713;</span></td>
+							</tr>
+						</table>
+					</section>
+				</section>
 
 				<section>
 					<h3>When should to choose Typescript</h3>
+					<table class="compare-table">
+						<tr>
+							<th></th>
+							<th><img src="./images/js-logo.png" alt="JS-logo" width="60" height="60"></th>
+							<th><img src="./images/Typescript_logo.svg" alt="TS-logo" width="60" height="60"></th>
+						</tr>
+						<tr class="fragment">
+							<th>Simple project</th>
+							<th>+</th>
+							<th>-</th>
+						</tr>
+						<tr class="fragment">
+							<th>Middle project</th>
+							<th>+</th>
+							<th>+</th>
+						</tr>
+						<tr class="fragment">
+							<th>Complicated project</th>
+							<th>-</th>
+							<th>+</th>
+						</tr>
+					</table>
 				</section>
 				<section data-background-image="./images/roud.jpeg">
 					<h2>Thank you for your attention!</h2>
@@ -202,7 +338,7 @@ let result = sum(10, 20); // 30</code></pre>
 			Reveal.initialize({
 				hash: true,
 
-				// transition: 'convex', 
+				slideNumber: 'c/t', 
 
 				transitionSpeed: 'slow',
 
