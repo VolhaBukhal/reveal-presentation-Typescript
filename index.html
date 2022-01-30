@@ -56,12 +56,11 @@
 				<!-- Why do we need TypeScript? -->
 				<section>
 					<h3>Why do we need TypeScript?</h3>
-					<div class="fragment">TypeScript allows to find the errors before you run the program </div>
-					<div class="fragment fade-in"> TypeScript implements the main concepts of object-oriented languages</div>
-					<div class="fragment fade-in"> TypeScript allows to create complicated programs quicker --> simpler, easier for refactoring the code</div>
-					<div class="fragment fade-in"> TypeScript is openSource and avalible on GitHub
-						<a href="https://github.com/Microsoft/TypeScript">https://github.com/Microsoft/TypeScript</a>
-					</div>
+					<div class="fragment highlight-blue">TypeScript allows to find the errors before you run the program </div>
+					<div class="fragment highlight-blue"> TypeScript implements the main concepts of object-oriented languages</div>
+					<div class="fragment highlight-blue"> TypeScript allows to create complicated programs quicker --> simpler, easier for refactoring the code</div>
+					<div class="fragment highlight-blue"> TypeScript is openSource and available on GitHub</div>
+					<div class="fragment highlight-blue"> TypeScript supports modern features (arrow functions, let, const)</div>
 				</section>
 				<!-- How to use? -->
 				<section>
@@ -78,7 +77,7 @@
 				<!-- Types in Typescript -->
 				<section>
 					<h3>Types in Typescript</h3>
-					<p>Typescript has all available in JS types plus <span style="color: #3cd0e8">enum</span> for </p>
+					<p>Typescript has all available in JS types and some extra features (<span style="color: blue">enum, interfaces, tuples etc</span>)</p>
 					<div class="fragment fade-left">Boolean
 						<pre><code>let isComplited: boolean = true;</code></pre>
 					</div>
@@ -190,6 +189,7 @@ return "Hello " + person.name;}</code></pre>
 interface Person {
 name: string;
 age: number;
+speak(a: string): void;
 }
 function greet(person: Person) {
 return "Hello " + person.name;
@@ -229,7 +229,8 @@ return "Hello " + person.name;}</code></pre>
 					</section>
 					<section>
 						<pre><code>//Type union
-let code: (string | number);
+type alphanumeric = string | number;							
+let code: alphanumeric;
 code = 123;   // OK
 code = "ABC"; // OK
 code = false; // Compiler Error
@@ -254,20 +255,19 @@ type Employee = Developer | Tester
 							</tr>
 							<tr>
 								<td>Unions</td>
-								<td><span style="color: red">&#x2715;</span></td>
 								<td><span style="color: green">&#x2713;</span></td>
+								<td><span style="color: red">&#x2715;</span></td>
 							</tr>
 							<tr>
 								<td>Tuple types</td>
-								<td><span style="color: green">&#x2713;</td>
-								<td><span style="color: red">&#x2715; unclear</td>
+								<td><span style="color: green">&#x2713;</span></td>
+								<td><span style="color: green">&#x2713; but unclear</span></td>
 							</tr>
 							<tr>
 								<td>Functions</td>
 								<td><span style="color: green">&#x2713; </span>
 								</td>
-								<td><span style="color: red">&#x2715; seems tricky</span>
-								</td>
+								<td><span style="color: green">&#x2713; but seems tricky</span></td>
 							</tr>
 							<tr>
 								<td>Declaration merging</td>
