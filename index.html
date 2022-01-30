@@ -25,11 +25,13 @@
 					<p>for <a href="https://rs.school/js/" target="_blank">RS2021Q3</a></p>
 					<p>Belarus, 2022</p>
 				</section>
+
 				<section>
 					<h3>What does typescript is?</h3>
 					<p>TypeScript is <b>JavaScript with syntax for types</b></p>
 						<img src="./images/TS-JS-Compiler.png" alt="Typescript and JavaScript compiler">
 				</section>
+
 				<section>
 					<h3>The history of appearance</h3>
 					<section>
@@ -51,6 +53,7 @@
 						</ul>
 					</section>
 				</section>
+
 				<section>
 					<h3>Why do we need TypeScript?</h3>
 					<div class="fragment">TypeScript allows to find the errors before you run the program </div>
@@ -60,9 +63,130 @@
 						<a href="https://github.com/Microsoft/TypeScript">https://github.com/Microsoft/TypeScript</a>
 					</div>
 				</section>
+
 				<section>
-					<h3>How to use, installation</h3>
+					<h3>How to use?</h3>
+					<p>Browsers don't understand Typescript</p>
+					<div class="fragment fade-in">  
+					<pre><code data-trim data-noescape>
+						npm -install typescript --save-dev
+					</code></pre>
+					</div>
+					<div class="fragment fade-in">create tsconfig.json file</div>
+					<div class="fragment fade-in">compile with command: <pre><code>tsc  or tsc--watch</code></pre></div>
 				</section>
+
+				<section>
+					<h3>Types in Typescript</h3>
+					<p>Typescript has all available in JS types plus <span style="color: #3cd0e8">enum</span> for </p>
+					<div class="fragment fade-left">Boolean
+						<pre><code>let isComplited: boolean = true;</code></pre>
+					</div>
+					<div class="fragment fade-left">Number
+					<pre><code data-trim data-noescape>
+let year: number = 2022;
+let bit: bigint = 100n;
+						</code></pre>
+					</div>
+					<div class="fragment fade-left">String
+					<pre><code data-trim data-noescape>
+let school: string = 'The Rolling Scopes School';
+						</code></pre>
+					</div>
+				</section>
+				<section>
+					<h3>Types in Typescript</h3>
+					<div class="fragment fade-left">Array
+						<pre><code>
+	const lavels: string[] = ['stage0', 'stage1', 'stage2'];
+	const lavels: Array&lt;string&gt; = ['stage0', 'stage1', 'stage2'];
+							</code></pre>
+						</div>
+					<div class="fragment fade-left">Tuple
+						<pre><code>
+	//Declare a tuple type						
+	let course: [string, number];
+	//Initialize
+	course = ['Frontend', 2022];
+	//Initialize incorrectly
+	course = [2022, 'Frontend']
+	// Error: TS2322: Type 'string' is not assignable to type 'number'
+	// Error: TS2322: Type 'number' is not assignable to type 'string'
+						</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<h3>Types in Typescript</h3>
+						<div class="fragment fade-left">Numeric enums
+							<pre><code>enum Direction {
+	Up,
+	Down,
+	Left,
+	Right,
+}
+let arrow: Direction = Direction.Up;
+								</code></pre>
+						</div>
+						<div class="fragment fade-left">String enums
+								<pre><code>enum Direction {
+  Up = "UP",
+  Down = "DOWN",
+  Left = "LEFT",
+  Right = "RIGHT",
+}
+let arrow: Direction = Direction.Up;
+								</code></pre>
+						</div>
+				</section>
+
+				<section>
+					<h3>Types in Typescript</h3>
+					<div class="fragment fade-left"> <span style="color: blue"> Any</span> 
+						<p> <span style="color: red">&#x2715;</span> Make type checking unuseful</p>
+					</div>
+					<div class="fragment fade-left"><span style="color: blue"> Unknown</span> 
+						<p> <span style="color: green">&#x2713;</span> require type checking</p>
+					</div>
+					<div class="fragment fade-left"><span style="color: blue"> Void</span> 
+						<p> <span style="color: green">&#x2713;</span> absence of having any type at all</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>Functions in Typescript</h3>
+					<div class="fragment fade-left">Function return void
+						<pre><code>function hello (){
+	console.log("Hello TypeScript");
+};
+	
+let message: ()=>void = hello;
+message();</code></pre>
+						</div>
+						<div class="fragment fade-left">Function return value
+							<pre><code>function sum (x: number, y?: number): number {
+	return x + y;
+};</code></pre>
+						</div>
+						<div class="fragment fade-left">Arrow function
+							<pre><code>let sum = (x: number, y: number) => x + y;
+let result = sum(10, 20); // 30</code></pre>
+						</div>
+				</section>
+
+
+
+
+
+				<section>
+					<h3>When should to choose Typescript</h3>
+				</section>
+				<section data-background-image="./images/roud.jpeg">
+					<h2>Thank you for your attention!</h2>
+				</section>
+
+
+
 				
 			</div>
 		</div>
